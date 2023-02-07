@@ -24,7 +24,7 @@ This repo provides the skeleton to get you started with using <a href="https://g
   </a>
   <p align="center">
     <a href="https://heroku.com/deploy?template=https://github.com/medusajs/medusa-starter-default/tree/feat/deploy-heroku">
-      <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
+      <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy"/>
     </a>
   </p>
 </p>

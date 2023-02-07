@@ -1,20 +1,20 @@
-import { BaseService } from "medusa-interfaces";
-import { Service } from 'medusa-extender';
-import { EntityManager } from 'typeorm';
+import { BaseService } from 'medusa-interfaces'
+import { Service } from 'medusa-extender'
+import { EntityManager } from 'typeorm'
 
 type InjectedDependencies = {
-    manager: EntityManager;
-};
+	manager: EntityManager
+}
 
 @Service()
 export class ExampleService extends BaseService {
-    static resolutionKey = 'exampleService';
+	static resolutionKey = 'exampleService'
 
-    private readonly manager: EntityManager;
+	private readonly manager: EntityManager
 
-    constructor({ manager }: InjectedDependencies, private readonly config: any) {
-        super();
+	constructor({ manager }: InjectedDependencies, private readonly config: any) {
+		super()
 
-        this.manager = manager;
-    }
+		this.manager = manager
+	}
 }
