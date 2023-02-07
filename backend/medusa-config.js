@@ -30,7 +30,7 @@ const STORE_CORS = process.env.STORE_CORS || "http://localhost:8000";
 
 // Database URL (here we use a local database called medusa-development)
 const DATABASE_URL =
-  process.env.DATABASE_URL || "postgres://localhost/medusa-store";
+  process.env.DATABASE_URL || "postgres://medusa:example@localhost/vhm";
 
 // Medusa uses Redis, so this needs configuration as well
 const REDIS_URL = process.env.REDIS_URL || "redis://localhost:6379";
@@ -59,12 +59,10 @@ module.exports = {
     cli_migration_dirs: [
       "node_modules/medusa-marketplace/dist/**/*.migration.js",
     ],
-    // redis_url: REDIS_URL,
+    redis_url: REDIS_URL,
     // For more production-like environment install PostgresQL
-    // database_url: DATABASE_URL,
-    // database_type: "postgres",
-    database_database: "./medusa-db.sql",
-    database_type: "sqlite",
+    database_url: DATABASE_URL,
+    database_type: "postgres",
     store_cors: STORE_CORS,
     admin_cors: ADMIN_CORS,
   },
