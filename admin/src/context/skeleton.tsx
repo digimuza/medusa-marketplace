@@ -1,34 +1,34 @@
-import React, { createContext, ReactNode } from "react"
+import React, { createContext, ReactNode } from 'react'
 
 type SkeletonContextType = {
-  isLoading?: boolean
+	isLoading?: boolean
 }
 
 const SkeletonContext = createContext<SkeletonContextType>({
-  isLoading: false,
+	isLoading: false,
 })
 
 type Props = {
-  children?: ReactNode
-  isLoading?: boolean
+	children?: ReactNode
+	isLoading?: boolean
 }
 
 const SkeletonProvider = ({ children, isLoading }: Props) => {
-  return (
-    <SkeletonContext.Provider
-      value={{
-        isLoading,
-      }}
-    >
-      {children}
-    </SkeletonContext.Provider>
-  )
+	return (
+		<SkeletonContext.Provider
+			value={{
+				isLoading,
+			}}
+		>
+			{children}
+		</SkeletonContext.Provider>
+	)
 }
 
 export default SkeletonProvider
 
 export const useSkeleton = () => {
-  const { isLoading } = React.useContext(SkeletonContext)
+	const { isLoading } = React.useContext(SkeletonContext)
 
-  return { isLoading }
+	return { isLoading }
 }
